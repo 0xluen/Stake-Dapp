@@ -26,11 +26,6 @@ function MyStakes() {
 
   }
 
-
-  
-
-
-
   return (
     <div
       className={`w-full flex flex-col p-6 gap-4 rounded-lg bg-theme-mainbold`}
