@@ -239,12 +239,12 @@ contract StakingContract is ReentrancyGuard {
         return (userStake.amount * rate) / 100;
     }
 
-    // Function to get unlock time for a specific stake 90 days;  180 days ;365 days;
+    // Function to get unlock time for a specific stake   
     function stakeUnlockTime(uint256 _stakeID) public view returns (uint256) {
         Stake storage userStake = stakes[_stakeID];
-        if (userStake.stakeType == StakeType.ThreeMonths) return userStake.startTime + 5 minutes;
-        if (userStake.stakeType == StakeType.SixMonths) return userStake.startTime + 10 minutes;
-        if (userStake.stakeType == StakeType.TwelveMonths) return userStake.startTime + 15 minutes;
+        if (userStake.stakeType == StakeType.ThreeMonths) return userStake.startTime + 90 days;
+        if (userStake.stakeType == StakeType.SixMonths) return userStake.startTime + 180 days ;
+        if (userStake.stakeType == StakeType.TwelveMonths) return userStake.startTime + 365 days;
         revert("Invalid stake type");
     }
 
