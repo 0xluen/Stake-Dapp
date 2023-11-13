@@ -9,10 +9,9 @@ export function useGetUserStakes(address) {
     args: [address],
     enabled: !!address,
     select: (data) => {
- 
       return data[0].map((stake,index) => {
         return {
-          stalker: stake.stalker,
+          stalker: stake.staker,
           amount: Number(stake.amount) / 10 ** 18,
           rawAmount: stake.amount,
           stakeType: stake.stakeType,

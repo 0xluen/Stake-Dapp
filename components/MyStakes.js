@@ -11,7 +11,6 @@ function MyStakes() {
   const days = [7, 30, 60];
   const account = useAccount();
   const stakes = useGetUserStakes(account.address);
-
   const currentUnixTimestamp = Math.floor(Date.now() / 1000); 
 
 
